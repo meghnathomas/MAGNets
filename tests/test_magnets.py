@@ -5,7 +5,7 @@
 
 import unittest
 
-from magnets import magnets
+import magnets
 
 
 class TestMagnets(unittest.TestCase):
