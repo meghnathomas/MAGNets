@@ -26,7 +26,7 @@ A Python package to aggregate and reduce water distribution network models
 Features
 --------
 
-* TODO
+MAGNets is a Python package designed to perform the reduction and aggregation of water distribution network models. The software is capable of reducing a network around an optional operating point and allows the user to customize which junctions they would like retained in the reduced model. 
 
 Credits
 -------
