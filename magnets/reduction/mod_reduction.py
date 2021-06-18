@@ -144,6 +144,12 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
                 if removal_node in junc_dict[junc_names[k]]['Connected nodes']:
                     junc_dict[junc_names[k]]['Connected nodes'].remove(removal_node)
                     
-    wn.write_inpfile('reduced {}'.format(inp_file))
+    if '/' in inp_file:
+        index = inp_file.rindex('/') 
+        new_name = inp_file[:index] + 'reduced ' + inp_file[index:]
+        wn.write_inpfile(new_name)
+        
+    else:
+        wn.write_inpfile('reduced {}'.format(inp_file))
                     
     return 1

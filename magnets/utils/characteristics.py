@@ -158,7 +158,7 @@ def characteristics(inp_file, op_pt = None, nodes_to_keep = None):
             else:
                 counter = counter+1
         if counter > 0:
-            warnings.warn('Some values in list of nodes to keep provided by user do not exist in the model or cannot be removed. These values have been ignored.')
+            warnings.warn('Some values in list of nodes to keep provided by user do not exist in the model or have already been classified as special nodes. These values have been ignored.')
                     
     #build relations
     connected_nodes = []
