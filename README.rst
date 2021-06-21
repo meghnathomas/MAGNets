@@ -7,7 +7,7 @@ MAGNets
         :target: https://pypi.python.org/pypi/magnets
 
 .. image:: https://img.shields.io/travis/meghnathomas/magnets.svg
-        :target: https://travis-ci.com/meghnathomas/magnets
+        :target: https://travis-ci.com/meghnathomas/MAGNets.svg?branch=master
 
 .. image:: https://readthedocs.org/projects/magnets/badge/?version=latest
         :target: https://magnets.readthedocs.io/en/latest/?version=latest
