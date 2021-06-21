@@ -12,7 +12,7 @@ MAGNets
 .. image:: https://readthedocs.org/projects/magnets/badge/?version=latest
         :target: https://magnets.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
-.. image:: https://static.pepy.tech/personalized-badge/magnets?period=month&units=international_system&left_color=black&right_color=orange&left_text=Downloads
+.. image:: https://static.pepy.tech/personalized-badge/magnets?period=month&units=international_system&left_color=black&right_color=orange&left_text=downloads
         :target: https://pepy.tech/project/magnets
 
 
