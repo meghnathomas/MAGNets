@@ -11,19 +11,19 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'cycler==0.10.0',
-    'decorator==4.4.2',
-    'kiwisolver==1.1.0',
-    'matplotlib==3.0.3',
-    'networkx==2.4',
-    'numpy>=1.19.0rc1',
-    'pandas==1.1.5',
-    'Pillow==8.2.0',
-    'pyparsing==2.4.7',
-    'python-dateutil==2.8.1',
-    'pytz==2021.1',
-    'scipy==1.5.4',
-    'six==1.15.0',
+    'cycler',
+    'decorator',
+    'kiwisolver',
+    'matplotlib',
+    'networkx',
+    'numpy',
+    'pandas',
+    'Pillow',
+    'pyparsing',
+    'python-dateutil',
+    'pytz',
+    'scipy',
+    'six',
     'wntr>=0.3.0'
 ]
 
