@@ -12,9 +12,10 @@ MAGNets
 .. image:: https://readthedocs.org/projects/magnets/badge/?version=latest
         :target: https://magnets.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
-.. image:: https://static.pepy.tech/personalized-badge/magnets?period=month&units=international_system&left_color=black&right_color=orange&left_text=downloads
-        :target: https://pepy.tech/project/magnets
 
+.. image:: https://pepy.tech/badge/magnets
+        :target: https://pepy.tech/project/magnets
+        :alt: PyPI - Downloads
 
 
 A Python package to aggregate and reduce water distribution network models
