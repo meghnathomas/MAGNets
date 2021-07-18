@@ -41,8 +41,8 @@ To install MAGNets, run this command in your terminal:
 
 This is the preferred method to install MAGNets, as it will always install the most recent stable release.
 
-If you don’t have pip installed, this `Python installation guide`_ can guide you through the process.
-.. _Python installation guide: https://docs.python-guide.org/starting/installation/
+If you don’t have pip installed, this `Python installation guide`__ can guide you through the process.
+__https://docs.python-guide.org/starting/installation/
 
 Credits
 -------
