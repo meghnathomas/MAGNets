@@ -30,7 +30,7 @@ Overview
 
 MAGNets is a Python package designed to perform the reduction and aggregation of water distribution network models. The software is capable of reducing a network around an optional operating point and allows the user to customize which junctions they would like retained in the reduced model. 
 
-Installation
+Installation: Stable release
 --------
 
 To install MAGNets, run this command in your terminal:
@@ -44,6 +44,31 @@ This is the preferred method to install MAGNets, as it will always install the m
 If you don’t have pip installed, this `Python installation guide`_ can guide you through the process.
 
 .. _`Python installation guide`: https://docs.python-guide.org/starting/installation/
+
+
+Installation: From sources
+--------
+
+The sources for MAGNets can be downloaded from the Github repo.
+
+You can either clone the public repository:
+
+.. code:: python
+
+    git clone git://github.com/meghnathomas/magnets
+    
+Or download the tarball:
+
+.. code:: python
+
+    curl -OJL https://github.com/meghnathomas/magnets/tarball/master
+    
+Once you have a copy of the source, you can install it with:
+
+.. code:: python
+
+    python setup.py install
+    
 
 Credits
 -------
