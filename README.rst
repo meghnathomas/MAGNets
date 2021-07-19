@@ -21,10 +21,6 @@ MAGNets
 A Python package to aggregate and reduce water distribution network models
 
 
-* Free software: MIT license
-* Documentation: https://magnets.readthedocs.io.
-
-
 Overview
 --------
 
