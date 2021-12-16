@@ -41,8 +41,6 @@ def nonlin_g_to_lin_g(g, h1, h2):
     if h1 == h2:
         h1 = 0
         h2 = epsilon
-    #     return epsilon
-    # else:
     return ((g*(abs(h1-h2)**((1/1.852)-1)))/1.852)
 
 #function to convert linearized to non-linear g
@@ -63,5 +61,3 @@ def new_pipe_length(wn, pipe_dict):
     for i in range(len(wn.pipe_name_list)):
         lengths.append(pipe_dict[pipe_names[i]]['Length'])
     return (np.mean(np.array(lengths)))
-
-# new_pipe_len = new_pipe_length(wn, pipe_dict)

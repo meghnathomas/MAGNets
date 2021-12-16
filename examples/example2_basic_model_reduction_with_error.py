@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define .INP file 
-inp_file = 'ky1.inp'
+inp_file = 'networks/ky1.inp'
 
 # Define operating point
 op_pt = 9

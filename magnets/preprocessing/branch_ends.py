@@ -1,6 +1,5 @@
 import wntr
 
-
 def branch_ends(relations, wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes):
 
     num_connections = [len(node) for node in relations.values()]
@@ -27,9 +26,10 @@ def branch_ends(relations, wn, new_link_list, junc_dict, pipe_dict, unremovable_
             receiving_node_name = relations.get(branch_ends[i])[0]
             receiving_node = wn.get_node(receiving_node_name)
             receiving_nodes.append(receiving_node_name)
-                    
+            
+            #update demand
+            junc_dict[receiving_node_name]['Demand'] = junc_dict[receiving_node_name]['Demand'] + junc_dict[branch_ends[i]]['Demand']
             receiving_node.demand_timeseries_list[0].base_value = receiving_node.demand_timeseries_list[0].base_value + branch_end_node.demand_timeseries_list[0].base_value
-            junc_dict[receiving_node_name]['Demand'] = receiving_node.demand_timeseries_list[0].base_value
             
             #delete links and nodes and update G
             for j in range(len(new_link_list)):

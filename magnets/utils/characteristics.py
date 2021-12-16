@@ -25,7 +25,7 @@ def characteristics(inp_file, op_pt = None, nodes_to_keep = None):
     dq = []
     
     for junc_name, junction in wn.junctions():
-        dq.append(junction.demand_timeseries_list[0].base_value)
+        dq.append(results.node['demand'].loc[op_pt*report_time_step, junc_name])
         
     link_1 = []
     link_2 = []
@@ -56,7 +56,7 @@ def characteristics(inp_file, op_pt = None, nodes_to_keep = None):
 
         op_pt_head = results.node['head'].loc[op_pt*report_time_step, junc_name]
             
-        junc_dict[junc_name] = {'Demand': junction.demand_timeseries_list[0].base_value, 'Connected nodes': connected_nodes, 'Head at op pt': op_pt_head, 'Diagonal g': 0}
+        junc_dict[junc_name] = {'Demand': results.node['demand'].loc[op_pt*report_time_step, junc_name], 'Connected nodes': connected_nodes, 'Head at op pt': op_pt_head, 'Diagonal g': 0}
     
     #building pipe dictionary
     pipe_names = wn.pipe_name_list
@@ -174,4 +174,4 @@ def characteristics(inp_file, op_pt = None, nodes_to_keep = None):
     
     relations = dict(zip(junc_names,connected_nodes))
     
-    return wn, op_pt,  pipe_dict,junc_dict,unremovable_nodes,special_nodes,special_links,special_links_nodes, relations, new_link_list, results
+    return wn, op_pt, pipe_dict,junc_dict,unremovable_nodes,special_nodes,special_links,special_links_nodes, relations, new_link_list, results

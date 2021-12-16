@@ -4,7 +4,7 @@ from magnets import reduction as mr
 import time
 
 # Define .INP file and operating point
-inp_file = 'Net3 ND.inp'
+inp_file = 'networks/Net3 ND.inp'
 op_pt = 3
 
 # Find EPS results for original model
@@ -21,7 +21,7 @@ for i in range(num_junc):
     junc_dict[junc_names[i]] = {'Original head': results.node['head'].loc[:, junc_names[i]]}
 
 # Define a function to calculate percentage deviation of heads between reduced and original models
-def plot_fn(wn,wn2, op_pt):
+def plot_fn(wn, wn2, op_pt):
     
     # Find EPS results for reduced model
     sim2 = wntr.sim.EpanetSimulator(wn2)
@@ -30,7 +30,7 @@ def plot_fn(wn,wn2, op_pt):
     junc_names = wn2.junction_name_list
     num_junc = len(junc_names)
     
-    # Store heads od nodes in reduced model
+    # Store heads of nodes in reduced model
     for i in range(num_junc):
         junc_dict[junc_names[i]]['Reduced head'] = results2.node['head'].loc[:, junc_names[i]]
     

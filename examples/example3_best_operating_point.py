@@ -4,7 +4,7 @@ import time
 import numpy as np
 
 # Define .INP file 
-inp_file = 'ky1.inp'
+inp_file = 'networks/ky1.inp'
 
 # Find EPS results for original model
 wn = wntr.network.WaterNetworkModel(inp_file)

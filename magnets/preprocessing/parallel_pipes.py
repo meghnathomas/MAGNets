@@ -42,13 +42,14 @@ def parallel_pipes(relations, wn, new_link_list, junc_dict, pipe_dict, unremovab
             if (new_link_list[i][0] == a and new_link_list[i][1] == b) or (new_link_list[i][1] == a and new_link_list[i][0] == b):
                 if link_names[i] not in parallel_links and link_names[i] not in special_links:
                     parallel_links[j].append(link_names[i])
-                    
+        
+        # update junc_dict and relations to only reflect single pipes connecting two nodes
         junc_dict[a]['Connected nodes'] = list(np.unique(np.array((junc_dict[a]['Connected nodes']))))
         junc_dict[b]['Connected nodes'] = list(np.unique(np.array((junc_dict[b]['Connected nodes']))))
         relations[a] = list(np.unique(np.array((relations[a]))))
         relations[b] = list(np.unique(np.array((relations[b]))))
     
-    
+    # remove pipes in parallel and replace with single pipe
     for k in range(len(parallel_links)):
         leng = []
         ks = []

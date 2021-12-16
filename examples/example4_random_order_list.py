@@ -5,7 +5,7 @@ from magnets import reduction as mr
 import time
 
 # Define .INP file and operating point
-inp_file = 'Net3 ND.inp'
+inp_file = 'networks/Net3 ND.inp'
 op_pt = 3
 
 # Find EPS results for original model

@@ -3,11 +3,17 @@ from magnets.reduction import build_g_matrix
 from magnets.reduction import reinitialize
 from magnets.utils.characteristics import *
 from magnets.utils.call_on_functions import *
+import warnings
 
-
-def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, relations, nodes_to_be_removed, new_pipe_len, alpha, inp_file):
+def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, relations, nodes_to_be_removed, new_pipe_len, alpha, inp_file, max_nodal_degree, op_pt):
     
-   
+    if max_nodal_degree == None: 
+        max_nodal_degree = 100
+        
+    if (max_nodal_degree < 1 or (isinstance(max_nodal_degree, int) == False and max_nodal_degree != None)):
+        warnings.warn('Invalid maximum nodal degree provided by user. \ Running simulation with maximum nodal degree = 100.')
+        max_nodal_degree = 100
+        
     count = 1
     
     while (len(nodes_to_be_removed)!=0):
@@ -24,24 +30,25 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
             num_connections.append(len(junc_dict[nodes_to_be_removed[i]]['Connected nodes']))
             
         removal_node = nodes_to_be_removed[num_connections.index(min(num_connections))]
-        neighbor_nodes = junc_dict[removal_node]['Connected nodes']
-        # print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        # print('rem node', removal_node, 'dem',junc_dict[removal_node]['Demand'], 'g', junc_dict[removal_node]['Diagonal g'], 'nb nodes', neighbor_nodes)    
         
+        if min(num_connections) > max_nodal_degree:
+            break
+        
+        neighbor_nodes = junc_dict[removal_node]['Connected nodes']
+                
         if len(neighbor_nodes)==1:
             
             nb_node = neighbor_nodes[0]
             for j in range(num_pipes):
                 if (pipe_dict[pipe_names[j]]['Start node name'] == nb_node and pipe_dict[pipe_names[j]]['End node name'] == removal_node) or (pipe_dict[pipe_names[j]]['Start node name'] == removal_node and pipe_dict[pipe_names[j]]['End node name'] == nb_node):
                     nb_link = pipe_names[j]
-            # print('rem node', removal_node, 'nb link', nb_link)
             
             #update diagonal g~
             junc_dict[nb_node]['Diagonal g'] = junc_dict[nb_node]['Diagonal g'] - junc_dict[removal_node]['Diagonal g']
             
-            #update dq
+            #update demand
             junc_dict[nb_node]['Demand'] = junc_dict[nb_node]['Demand'] + junc_dict[removal_node]['Demand']
-            wn.get_node(nb_node).demand_timeseries_list[0].base_value = junc_dict[nb_node]['Demand']
+            wn.get_node(nb_node).demand_timeseries_list[0].base_value = wn.get_node(nb_node).demand_timeseries_list[0].base_value + wn.get_node(removal_node).demand_timeseries_list[0].base_value
             
             #delete link and node and update dictionaries
             wn.remove_link(nb_link)
@@ -75,8 +82,8 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
                         
                         #update demand
                         junc_dict[node_x]['Demand'] = junc_dict[node_x]['Demand'] + abs(pipe_dict[link_x]['Linear g']*junc_dict[removal_node]['Demand']/junc_dict[removal_node]['Diagonal g'])
-                        wn.get_node(node_x).demand_timeseries_list[0].base_value = junc_dict[node_x]['Demand']
-                        
+                        wn.get_node(node_x).demand_timeseries_list[0].base_value = wn.get_node(node_x).demand_timeseries_list[0].base_value + abs(pipe_dict[link_x]['Linear g']*wn.get_node(removal_node).demand_timeseries_list[0].base_value/junc_dict[removal_node]['Diagonal g'])
+ 
                         #update diagonal g
                         junc_dict[node_x]['Diagonal g'] = junc_dict[node_x]['Diagonal g'] - abs((pipe_dict[link_x]['Linear g']**2)/junc_dict[removal_node]['Diagonal g'])
                         
@@ -146,10 +153,10 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
                     
     if '/' in inp_file:
         index = inp_file.rindex('/') + 1
-        new_name = inp_file[:index] + 'reduced ' + inp_file[index:]
+        new_name = inp_file[:index] + 'reduced ' + inp_file[index:] + '_' + str(op_pt)
         wn.write_inpfile(new_name)
         
     else:
-        wn.write_inpfile('reduced {}'.format(inp_file))
+        wn.write_inpfile('reduced {} {}'.format(inp_file, op_pt))
                     
     return 1
