@@ -25,7 +25,7 @@ def characteristics(inp_file, op_pt = None, nodes_to_keep = None):
     dq = []
     
     for junc_name, junction in wn.junctions():
-        dq.append(results.node['demand'].loc[op_pt*report_time_step, junc_name])
+        dq.append(junction.base_demand)
         
     link_1 = []
     link_2 = []

@@ -2,8 +2,17 @@ import wntr
 from magnets.utils.call_on_functions import *
 from magnets.utils.characteristics import *
 
-def reinitialize(wn,new_link_list, special_nodes, unremovable_nodes):
+def reinitialize(wn, new_link_list, special_nodes, unremovable_nodes):
     junc_names = wn.junction_name_list
+    
+    link_1 = []
+    link_2 = []
+    
+    for link_name, link in wn.links():
+        link_1.append(link.start_node_name)
+        link_2.append(link.end_node_name)
+    link_list = tuple(zip(link_1,link_2))
+    new_link_list = list(link_list)
     
     link_list_only_junc = []
     for a,b in new_link_list:
