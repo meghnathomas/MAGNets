@@ -153,7 +153,7 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
                     
     if '/' in inp_file:
         index = inp_file.rindex('/') + 1
-        new_name = inp_file[:index] + 'reduced ' + inp_file[index:] + '_' + str(op_pt)
+        new_name = inp_file[:index] + 'reduced ' + str(op_pt) + ' ' + inp_file[index:] 
         wn.write_inpfile(new_name)
         
     else:
