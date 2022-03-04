@@ -157,6 +157,6 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
         wn.write_inpfile(new_name)
         
     else:
-        wn.write_inpfile('reduced {} {}'.format(inp_file, op_pt))
+        wn.write_inpfile('reduced {} {}'.format(op_pt, inp_file))
                     
     return 1
