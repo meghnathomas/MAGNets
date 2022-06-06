@@ -1,5 +1,5 @@
 =======
-MAGNets
+MAGNets: Model AGgregation and reduction of water distribution Networks
 =======
 
 
