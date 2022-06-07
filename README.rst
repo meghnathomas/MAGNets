@@ -1,5 +1,5 @@
 =======
-MAGNets: Model AGgregation and reduction of water distribution Networks
+MAGNets
 =======
 
 
@@ -24,7 +24,7 @@ A Python package to aggregate and reduce water distribution network models
 Overview
 --------
 
-MAGNets is a Python package designed to perform the reduction and aggregation of water distribution network models. The software is capable of reducing a network around an optional operating point and allows the user to customize which junctions they would like retained in the reduced model. 
+MAGNets (Model AGgregation and reduction of water distribution Networks) is a Python package designed to perform the reduction and aggregation of water distribution network models. The software is capable of reducing a network around an optional operating point and allows the user to customize which junctions they would like retained in the reduced model. 
 
 Installation: Stable release
 --------
