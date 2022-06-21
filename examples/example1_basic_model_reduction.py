@@ -1,6 +1,12 @@
 import magnets as mg
 import time
 
+"""
+This basic example demonstrates how MAGNets can be used to reduce a water distribution network model around a given operating point, with the user providing a list 
+of nodes they would like to retain in the model.
+
+"""
+
 # Define .INP file 
 inp_file = 'networks/Net3 ND.inp'
 

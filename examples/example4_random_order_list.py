@@ -4,6 +4,12 @@ import random
 from magnets import reduction as mr
 import time
 
+"""
+This example demonstrates the mean and median percentage error, number of edges in the reduced model, and reduction time if 25%, 50%, 75%, and 100% of a randomly ordered
+list of nodes are removed from the model.
+
+"""
+
 # Define .INP file and operating point
 inp_file = 'networks/Net3 ND.inp'
 op_pt = 3

@@ -3,6 +3,12 @@ import magnets.reduction as mr
 import time
 import numpy as np
 
+"""
+This basic example demonstrates how to find the "best" operating point around which to reduce a model. Here, we define the "best" operating point as the one that
+results in the lowest maximum percentage deviation of pressure heads in the reduced model from pressure heads in the original model.
+
+"""
+
 # Define .INP file 
 inp_file = 'networks/ky1.inp'
 

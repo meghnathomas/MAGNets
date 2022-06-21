@@ -4,6 +4,14 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+This example demonstrates how MAGNets can be used to reduce a water distribution network model around a given operating point, with the user providing a list 
+of nodes they would like to retain in the model. Additionally, this example shows how the user can plot the percentage deviation of the pressure heads of each node 
+in the reduced model from the equivalent node in the original model to test the accuracy of MAGNets. This characterization of error can inform the user of the degree 
+to which they should reduce the model as well as which operating point they should select.
+
+"""
+
 # Define .INP file 
 inp_file = 'networks/ky1.inp'
 

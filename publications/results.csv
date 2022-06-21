@@ -1,0 +1,13 @@
+,Network,Number of Junctions in Original Model,Number of Junctions in Reduced Model,Reduction Time [s],Maximum Error [%]
+0,Net1,9,2,0.03,0.12
+1,Net2,35,3,0.05,0.55
+2,Net3 ND,92,7,0.08,3.5
+3,ky1,791,19,1.03,0.48
+4,ky2,811,5,3.29,0.56
+5,ky3,269,14,0.28,0.06
+6,ky4,959,9,1.32,1.2
+7,ky5,420,21,0.44,2.6
+8,ky6,543,9,0.6,0.09
+9,ky7,481,6,0.57,0.09
+10,ky8,1325,14,3.1,0.24
+11,bwsn2,12523,20,232.82,5.45
