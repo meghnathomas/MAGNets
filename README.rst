@@ -119,6 +119,10 @@ Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional 
 .. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
 .. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
 
+Contact
+-------
+Meghna Thomas - meghnathomas@utexas.edu
+
 Credits
 -------
 
