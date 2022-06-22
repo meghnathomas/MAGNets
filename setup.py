@@ -24,10 +24,11 @@ requirements = [
     'pytz',
     'scipy',
     'six',
-    'wntr>=0.3.0'    
+    'wntr>=0.3.0',
+    'importlib-metadata==4.5.0'
 ]
 
-setup_requirements = [ 'importlib-metadata==4.8.3']
+setup_requirements = [ ]
 
 test_requirements = [ ]
 
