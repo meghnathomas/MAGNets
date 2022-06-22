@@ -114,7 +114,7 @@ The parameters of the :code:`reduce_model` function are described as follows:
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
 
-Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 networks can be found in the `examples`_ folder.
+Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ folder.
 
 .. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
 .. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
