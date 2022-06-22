@@ -67,26 +67,6 @@ Once you have a copy of the source, you can install it with:
     python setup.py install
     
 
-Requirements
---------
-
-MAGNets requires Python version >= 3.6 as well as the installation of the following dependencies:
-
-* wntr >= 0.3.0
-* numpy
-* scipy
-* pandas
-* matplotlib 
-* networkx
-* cycler
-* decorator
-* kiwisolver
-* Pillow
-* pyparsing
-* python-dateutil
-* pytz
-* six
-
 Getting Started
 --------
 
@@ -118,6 +98,27 @@ Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional 
 
 .. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
 .. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
+
+Requirements
+--------
+
+MAGNets has been tested on Python version 3.6, 3.7, and 3.8. It requires the installation of the following dependencies:
+
+* wntr >= 0.3.0
+* numpy
+* scipy
+* pandas
+* matplotlib 
+* networkx
+* cycler
+* decorator
+* kiwisolver
+* Pillow
+* pyparsing
+* python-dateutil
+* pytz
+* six
+
 
 Contact
 -------
