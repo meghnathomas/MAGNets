@@ -27,9 +27,9 @@ requirements = [
     'wntr>=0.3.0'    
 ]
 
-setup_requirements = [ ]
+setup_requirements = [ 'importlib-metadata==4.11.4']
 
-test_requirements = ['importlib-metadata==4.11.4' ]
+test_requirements = [ ]
 
 setup(
     author="Meghna Sarah Thomas",
