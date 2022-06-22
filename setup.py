@@ -24,13 +24,12 @@ requirements = [
     'pytz',
     'scipy',
     'six',
-    'wntr>=0.3.0',
-    'importlib-metadata==4.11.4'
+    'wntr>=0.3.0'    
 ]
 
 setup_requirements = [ ]
 
-test_requirements = [ ]
+test_requirements = ['importlib-metadata==4.11.4' ]
 
 setup(
     author="Meghna Sarah Thomas",
