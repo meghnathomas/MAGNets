@@ -100,7 +100,7 @@ The user can then call on the following function to reduce a hydraulic model of 
 
 .. code:: python
 
-    wn2 = mg.reduction.reduce_model(inp_file, op_pt, node_to_keep, max_nodal_degree)
+    wn2 = mg.reduction.reduce_model(inp_file, op_pt, nodes_to_keep, max_nodal_degree)
 
 The parameters of the :code:`reduce_model` function are described as follows:
 
