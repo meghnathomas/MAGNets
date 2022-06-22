@@ -25,7 +25,6 @@ requirements = [
     'scipy',
     'six',
     'wntr>=0.3.0',
-    'importlib-metadata==4.5.0'
 ]
 
 setup_requirements = [ ]
