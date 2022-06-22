@@ -24,7 +24,8 @@ requirements = [
     'pytz',
     'scipy',
     'six',
-    'wntr>=0.3.0'
+    'wntr>=0.3.0',
+    'importlib-metadata==4.11.4'
 ]
 
 setup_requirements = [ ]
