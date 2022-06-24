@@ -30,6 +30,8 @@ MAGNets (Model AGgregation and reduction of water distribution Networks) is a Py
 Installation: Stable release
 --------
 
+Python distributions, such as Anaconda, are recommended to manage the Python environment as they already contain (or easily support the installation of) many Python packages (such as SciPy and NumPy) that are used in the MAGNets package.
+
 To install MAGNets, run this command in your terminal:
 
 .. code:: python
