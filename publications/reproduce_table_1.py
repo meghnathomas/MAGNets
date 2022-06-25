@@ -5,9 +5,7 @@ import time
 import numpy as np
 import pandas as pd
 
-# Please uncomment and modify line 10 to reflect the directory in which this code is present on your machine if you want to write the results to a csv file
-# Make sure this folder also contains the "networks" folder
-#file_path = r'...\publications'  
+# Make sure this folder contains the "networks" folder with the .inp files
 
 # Define list of test networks
 network_list = ['Net1.inp', 'Net2.inp', 'Net3 ND.inp', 'ky1.inp', 'ky2.inp', 'ky3.inp', 'ky4.inp', 'ky5.inp', 'ky6.inp', 'ky7.inp', 'ky8.inp', 'bwsn2.inp']
@@ -64,5 +62,5 @@ for inp_file in network_list:
 results_df = pd.DataFrame.from_dict(results_dict)
 print(results_df)
 
-# Uncomment the line below if you want to store the results in a csv file
-#results_df.to_csv(file_path + '\results.csv')  
+# tore the results in a csv file
+results_df.to_csv('results.csv')  
