@@ -1,6 +1,7 @@
-=======
-MAGNets
-=======
+.. raw:: html
+
+   <img src="https://github.com/meghnathomas/MAGNets/blob/master/logo/MAGNets_logo.png" align="center" alt="MAGNets">
+
 
 
 .. image:: https://img.shields.io/pypi/v/magnets.svg
