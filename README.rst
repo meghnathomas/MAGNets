@@ -73,7 +73,7 @@ Once you have a copy of the source, you can install it with:
 Getting Started
 --------
 
-To use MAGNets in a project, open a Python console or IDE and import the package using the following command:
+To use MAGNets in a project, open a Python IDE and import the package using the following command:
 
 .. code:: python
 
