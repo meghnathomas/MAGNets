@@ -126,6 +126,7 @@ MAGNets has been tested on Python version 3.6, 3.7, and 3.8. It requires the ins
 Contact
 -------
 Meghna Thomas - meghnathomas@utexas.edu
+
 Lina Sela - linasela@utexas.edu
 
 Credits
