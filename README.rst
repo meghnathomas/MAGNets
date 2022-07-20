@@ -25,9 +25,9 @@ A Python package to aggregate and reduce water distribution network models
 Overview
 --------
 
-MAGNets (Model AGgregation and reduction of water distribution Networks) is a Python package designed to perform the reduction and aggregation of water distribution network models. The software is capable of reducing a network around an optional operating point and allows the user to customize which junctions they would like retained in the reduced model. MAGNets' reduction approach is based on the variable elimination method proposed by `Ulanicki et al`_.
+MAGNets (Model AGgregation and reduction of water distribution Networks) is a Python package designed to perform the reduction and aggregation of water distribution network models. The software is capable of reducing a network around an optional operating point and allows the user to customize which junctions they would like retained in the reduced model. MAGNets' reduction approach is based on the variable elimination method proposed by `Ulanicki et al (1996)`_.
 
-.. _`Ulanicki et al`: https://www.researchgate.net/profile/Fernando-Martinez-Alzamora/publication/273796660_Simplification_of_Water_Distribution_Network_Models/links/550dca050cf2128741674d57/Simplification-of-Water-Distribution-Network-Models.pdf
+.. _`Ulanicki et al (1996)`: https://www.researchgate.net/profile/Fernando-Martinez-Alzamora/publication/273796660_Simplification_of_Water_Distribution_Network_Models/links/550dca050cf2128741674d57/Simplification-of-Water-Distribution-Network-Models.pdf
 
 Installation: Stable release
 --------
@@ -74,6 +74,13 @@ Once you have a copy of the source, you can install it with:
 Getting Started
 --------
 
+Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ and `publications`_ folders.
+
+.. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
+.. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
+.. _`publications`: https://github.com/meghnathomas/MAGNets/tree/master/publications
+
+
 To use MAGNets in a project, open a Python IDE and import the package using the following command:
 
 .. code:: python
@@ -98,10 +105,6 @@ The parameters of the :code:`reduce_model` function are described as follows:
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
 
-Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ folder.
-
-.. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
-.. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
 
 Requirements
 --------
