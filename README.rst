@@ -2,7 +2,7 @@
 
    <img src="https://github.com/meghnathomas/MAGNets/blob/master/logo/MAGNets_logo.png" align="center" alt="MAGNets">
 
-
+A Python package to aggregate and reduce water distribution network models
 
 .. image:: https://img.shields.io/pypi/v/magnets.svg
         :target: https://pypi.python.org/pypi/magnets
@@ -17,9 +17,6 @@
 .. image:: https://pepy.tech/badge/magnets
         :target: https://pepy.tech/project/magnets
         :alt: PyPI - Downloads
-
-
-A Python package to aggregate and reduce water distribution network models
 
 
 Overview
