@@ -36,7 +36,7 @@ MAGNets has been tested on Python version **3.6**, **3.7**, and **3.8**. A list 
 Installation: Stable release
 --------
 
-Python distributions, such as Anaconda, are recommended to manage the Python environment as they already contain (or easily support the installation of) many Python packages (such as SciPy and NumPy) that are used in the MAGNets package. Instructions to download and install the Anaconda distribution can be found `at this link`_, and Anaconda for specific versions of Python can be found in the `Anaconda distribution archive`_. This `blog post`_ demonstrates how to easily change the Anaconda Python version on your PC using the command prompt.
+Python distributions, such as Anaconda, are recommended to manage the Python environment as they already contain (or easily support the installation of) many Python packages (such as SciPy and NumPy) that are used in the MAGNets package. Instructions to download and install the Anaconda distribution can be found `at this link`_, and Anaconda for specific versions of Python can be found in the `Anaconda distribution archive`_. This `blog post`_ demonstrates how to easily change the Anaconda Python version to a version compatible with MAGNets using the command prompt.
 
 .. _`at this link`: https://www.anaconda.com/products/distribution
 
