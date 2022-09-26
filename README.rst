@@ -124,15 +124,15 @@ The parameters of the :code:`reduce_model` function are described as follows:
 
 **********************
 
-The **.py** files in the **examples** and **publications** folders can be accessed by:
+Instructions to run the **.py** files in the **examples** and **publications** folders using Spyder:
 
-#. downloading the folders to your system
+#. download the folders to your system
 
-#. opening Spyder
+#. open Spyder
 
-#. navigating to File → Open → Location of downloaded **examples** folder → **.py** script
+#. navigate to File → Open → Location of downloaded **examples/publications** folder → **.py** script
 
-#. navigating to Run → Run
+#. navigate to Run → Run
 
 Contact
 -------
