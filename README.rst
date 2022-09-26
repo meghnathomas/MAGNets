@@ -26,6 +26,13 @@ MAGNets (Model AGgregation and reduction of water distribution Networks) is a Py
 
 .. _`Ulanicki et al (1996)`: https://www.researchgate.net/profile/Fernando-Martinez-Alzamora/publication/273796660_Simplification_of_Water_Distribution_Network_Models/links/550dca050cf2128741674d57/Simplification-of-Water-Distribution-Network-Models.pdf
 
+Requirements
+--------
+
+MAGNets has been tested on Python version 3.6, 3.7, and 3.8. It requires the installation of the following dependencies:
+
+* wntr >= 0.3.0 * numpy * scipy * pandas * matplotlib * networkx * cycler * decorator * kiwisolver * Pillow * pyparsing * python-dateutil * pytz * six
+
 Installation: Stable release
 --------
 
@@ -101,27 +108,6 @@ The parameters of the :code:`reduce_model` function are described as follows:
 #. :code:`max_nodal_degree`: (optional, default = None) the maximum nodal degree of nodes being removed from the model. The nodal degree of a node is equal to the number of pipes incident to the node.
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
-
-
-Requirements
---------
-
-MAGNets has been tested on Python version 3.6, 3.7, and 3.8. It requires the installation of the following dependencies:
-
-* wntr >= 0.3.0
-* numpy
-* scipy
-* pandas
-* matplotlib 
-* networkx
-* cycler
-* decorator
-* kiwisolver
-* Pillow
-* pyparsing
-* python-dateutil
-* pytz
-* six
 
 
 Contact
