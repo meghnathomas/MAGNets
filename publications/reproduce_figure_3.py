@@ -19,7 +19,7 @@ def plot_network(wn, title, num):
     pos_dict = {}
     for node_name, node in wn.nodes():
         pos_dict[node_name] = node.coordinates
-                  
+
     plt.sca(ax[num])
     nxp.draw_networkx_nodes(G, pos_dict, node_size = 5, node_color = 'k', ax = ax[num])
     nxp.draw_networkx_nodes(G, pos_dict, nodelist = wn.tank_name_list, node_size = 30, node_color = 'b', node_shape = 'h', ax = ax[num])
@@ -27,9 +27,9 @@ def plot_network(wn, title, num):
     nxp.draw_networkx_edges(G, pos_dict, edgelist = G_edge_list, edge_color = 'k', width = 1, arrows = False, ax = ax[num])
     ax[num].set_axis_off
     ax[num].set_title(title)
-    
-# In[]: Reduce KY2 inp file 
-    
+
+# In[]: Reduce KY2 inp file
+
 # Extract hyraulic simulation results for original model
 wn = wntr.network.WaterNetworkModel(inp_file)
 
@@ -42,3 +42,4 @@ plot_network(wn, 'Full network', 0)
 plot_network(wn2, 'Fully reduced network', 1)
 plt.setp(ax, ylim=ax[0].get_ylim())
 plt.setp(ax, xlim=ax[0].get_xlim())
+plt.show()

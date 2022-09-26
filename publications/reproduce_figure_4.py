@@ -60,4 +60,4 @@ ax[0,1].plot(x_values, tank2_level_red_13, 'k--')
 ax[1,1].plot(x_values, pump1_flow, color = 'k')
 ax[1,1].plot(x_values, pump1_flow_red_13, 'k--')
 ax[1,1].set_xlabel('Time [$hr$]',fontsize = 14)
-
+plt.show()
