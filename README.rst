@@ -84,7 +84,13 @@ Once you have a copy of the source, you can install it with:
 Getting Started
 --------
 
-To use MAGNets in a project, open a Python IDE such as Spyder through the Anaconda GUI or by typing the following command in the command prompt:
+Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ and `publications`_ folders.
+
+.. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
+.. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
+.. _`publications`: https://github.com/meghnathomas/MAGNets/tree/master/publications
+
+Once MAGNets is installed on the system, it can be used in a projet through the means of a Python IDE. For example, to use MAGNets on Spyder, open Spyder either through the Anaconda GUI or by typing the following command in the command prompt:
 
 .. code:: python
 
@@ -113,13 +119,6 @@ The parameters of the :code:`reduce_model` function are described as follows:
 #. :code:`max_nodal_degree`: (optional, default = None) the maximum nodal degree of nodes being removed from the model. The nodal degree of a node is equal to the number of pipes incident to the node.
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
-
-Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ and `publications`_ folders.
-
-.. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
-.. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
-.. _`publications`: https://github.com/meghnathomas/MAGNets/tree/master/publications
-
 
 Contact
 -------
