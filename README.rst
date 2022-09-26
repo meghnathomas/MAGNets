@@ -29,14 +29,18 @@ MAGNets (Model AGgregation and reduction of water distribution Networks) is a Py
 Requirements
 --------
 
-MAGNets has been tested on Python version 3.6, 3.7, and 3.8. It requires the installation of the following dependencies:
+MAGNets has been tested on Python version **3.6**, **3.7**, and **3.8**. A list of its dependencies can be found `here`_.
 
-wntr >= 0.3.0 • numpy • scipy • pandas • matplotlib • networkx • cycler • decorator • kiwisolver • Pillow • pyparsing • python-dateutil • pytz • six
+.. _`here`: https://github.com/meghnathomas/MAGNets/blob/master/requirements.txt
 
 Installation: Stable release
 --------
 
-Python distributions, such as Anaconda, are recommended to manage the Python environment as they already contain (or easily support the installation of) many Python packages (such as SciPy and NumPy) that are used in the MAGNets package.
+Python distributions, such as Anaconda, are recommended to manage the Python environment as they already contain (or easily support the installation of) many Python packages (such as SciPy and NumPy) that are used in the MAGNets package. Instructions to download and install the Anaconda distribution can be found `at this link`_, and Anaconda for specific versions of Python can be found in the `Anaconda distribution archive`_.
+
+.. _`at this link`: https://www.anaconda.com/products/distribution
+
+.. _`Anaconda distribution archive`: https://repo.anaconda.com/archive/
 
 To install MAGNets, run this command in your terminal:
 
@@ -78,14 +82,13 @@ Once you have a copy of the source, you can install it with:
 Getting Started
 --------
 
-Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ and `publications`_ folders.
+To use MAGNets in a project, open a Python IDE such as Spyder through the Anaconda GUI or by typing the following command in the command prompt:
 
-.. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
-.. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
-.. _`publications`: https://github.com/meghnathomas/MAGNets/tree/master/publications
+.. code:: python
 
-
-To use MAGNets in a project, open a Python IDE and import the package using the following command:
+    spyder
+    
+Open a new script and import MAGNets using the following command:
 
 .. code:: python
 
@@ -108,6 +111,12 @@ The parameters of the :code:`reduce_model` function are described as follows:
 #. :code:`max_nodal_degree`: (optional, default = None) the maximum nodal degree of nodes being removed from the model. The nodal degree of a node is equal to the number of pipes incident to the node.
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
+
+Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ and `publications`_ folders.
+
+.. _`jupyter notebook`: https://github.com/meghnathomas/MAGNets/blob/master/examples/MAGNets_Demo.ipynb
+.. _`examples`: https://github.com/meghnathomas/MAGNets/tree/master/examples
+.. _`publications`: https://github.com/meghnathomas/MAGNets/tree/master/publications
 
 
 Contact
