@@ -31,7 +31,7 @@ Requirements
 
 MAGNets has been tested on Python version 3.6, 3.7, and 3.8. It requires the installation of the following dependencies:
 
-* wntr >= 0.3.0 * numpy * scipy * pandas * matplotlib * networkx * cycler * decorator * kiwisolver * Pillow * pyparsing * python-dateutil * pytz * six
+U+2022 wntr >= 0.3.0 U+2022	 numpy * scipy * pandas * matplotlib * networkx * cycler * decorator * kiwisolver * Pillow * pyparsing * python-dateutil * pytz * six
 
 Installation: Stable release
 --------
