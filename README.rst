@@ -122,17 +122,6 @@ The parameters of the :code:`reduce_model` function are described as follows:
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
 
-**********************
-
-Instructions to run the **.py** files in the **examples** and **publications** folders using Spyder:
-
-#. download the folders to your system
-
-#. open Spyder
-
-#. navigate to File → Open → Location of downloaded **examples/publications** folder → **.py** script
-
-#. navigate to Run → Run
 
 Contact
 -------
