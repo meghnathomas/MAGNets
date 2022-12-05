@@ -7,13 +7,6 @@ A Python package to aggregate and reduce water distribution network models
 .. image:: https://img.shields.io/pypi/v/magnets.svg
         :target: https://pypi.python.org/pypi/magnets
         
-.. image:: https://app.travis-ci.com/meghnathomas/MAGNets.svg?branch=master
-    :target: https://app.travis-ci.com/meghnathomas/MAGNets
-
-.. image:: https://readthedocs.org/projects/magnets/badge/?version=latest
-        :target: https://magnets.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-
 .. image:: https://pepy.tech/badge/magnets
         :target: https://pepy.tech/project/magnets
         :alt: PyPI - Downloads
