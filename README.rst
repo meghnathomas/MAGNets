@@ -115,6 +115,12 @@ The parameters of the :code:`reduce_model` function are described as follows:
 
 :code:`wn2` contains the water network model object of the reduced model. A .inp file of the reduced model is also written into the directory that contains the .inp file of the original network.
 
+Cite Us
+-------
+To cite MAGNets, please use the following publication: `MAGNets: Model Reduction and Aggregation of Water Networks`_
+
+.. _`MAGNets: Model Reduction and Aggregation of Water Networks`: https://ascelibrary.org/doi/full/10.1061/JWRMD5.WRENG-5486
+
 
 Contact
 -------
