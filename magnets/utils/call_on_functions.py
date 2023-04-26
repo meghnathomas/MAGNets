@@ -1,4 +1,6 @@
 import numpy as np
+from packaging.version import Version, parse
+import wntr
 
 epsilon = 10**(-6)
 
@@ -61,3 +63,9 @@ def new_pipe_length(wn, pipe_dict):
     for i in range(len(wn.pipe_name_list)):
         lengths.append(pipe_dict[pipe_names[i]]['Length'])
     return (np.mean(np.array(lengths)))
+
+def writeinpfile(wn, new_name):
+    if parse(str(wntr.__version__)) < parse('0.5.0'):
+        wn.write_inpfile(new_name)
+    else:
+        wntr.network.io.write_inpfile(wn, new_name)

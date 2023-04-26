@@ -5,7 +5,7 @@ from magnets.utils.characteristics import *
 from magnets.utils.call_on_functions import *
 import warnings
 
-def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, relations, nodes_to_be_removed, new_pipe_len, alpha, inp_file, max_nodal_degree, op_pt):
+def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, relations, nodes_to_be_removed, new_pipe_len, alpha, inp_file, max_nodal_degree, op_pt, save_filename):
     
     if max_nodal_degree == None: 
         max_nodal_degree = 100
@@ -150,13 +150,16 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
             for k in range(num_junc):
                 if removal_node in junc_dict[junc_names[k]]['Connected nodes']:
                     junc_dict[junc_names[k]]['Connected nodes'].remove(removal_node)
-                    
-    if '/' in inp_file:
-        index = inp_file.rindex('/') + 1
-        new_name = inp_file[:index] + 'reduced ' + str(op_pt) + ' ' + inp_file[index:] 
-        wn.write_inpfile(new_name)
-        
+    
+    if save_filename == None:
+        if '/' in inp_file:
+            index = inp_file.rindex('/') + 1
+            new_name = inp_file[:index] + 'reduced ' + str(op_pt) + ' ' + inp_file[index:] 
+            writeinpfile(wn, new_name)
+            
+        else:
+            writeinpfile(wn, 'reduced {} {}'.format(op_pt, inp_file))
     else:
-        wn.write_inpfile('reduced {} {}'.format(op_pt, inp_file))
+        writeinpfile(wn, save_filename + '.inp')
                     
     return 1

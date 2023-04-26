@@ -8,7 +8,7 @@ from magnets.reduction import reinitialize
 from magnets.reduction import build_g_matrix
 from magnets.reduction import mod_reduction
 
-def reduce_model(inp_file, op_pt = None, nodes_to_keep = None, max_nodal_degree = None):
+def reduce_model(inp_file, op_pt = None, nodes_to_keep = None, max_nodal_degree = None, save_filename = None):
     
     # initialize lists and junction/pipe characteristics
     wn, op_pt,  pipe_dict,junc_dict,unremovable_nodes,special_nodes,special_links,special_links_nodes, relations, new_link_list, results = characteristics(inp_file, op_pt, nodes_to_keep)
@@ -24,7 +24,7 @@ def reduce_model(inp_file, op_pt = None, nodes_to_keep = None, max_nodal_degree 
     # reduce model
     nodes_to_be_removed, link_list_only_junc, unremovable_nodes = reinitialize(wn,new_link_list, special_nodes, unremovable_nodes)
     junc_dict, pipe_dict = build_g_matrix(wn,junc_dict,pipe_dict, unremovable_nodes, special_nodes, alpha)
-    mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, relations, nodes_to_be_removed, new_pipe_len, alpha, inp_file, max_nodal_degree, op_pt)
+    mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, relations, nodes_to_be_removed, new_pipe_len, alpha, inp_file, max_nodal_degree, op_pt, save_filename)
     
     return wn
     
