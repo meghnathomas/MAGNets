@@ -59,7 +59,7 @@ You can either clone the public repository:
 
 .. code:: python
 
-    git clone git://github.com/meghnathomas/magnets
+    git clone https://github.com/meghnathomas/MAGNets
     
 Or download the tarball:
 
