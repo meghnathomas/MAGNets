@@ -1,0 +1,233 @@
+; Filename: networks/Net3 ND.inp
+; WNTR: 0.4.2
+; Created: 2023-04-26 16:39:41
+[TITLE]
+EPANET Example Network 3, updated to include longer duration
+Example showing how the percent of Lake water in a dual-source
+system changes over time.
+
+[JUNCTIONS]
+;ID                      Elevation       Demand Pattern                 
+ 10                               147    119.02419488 1                          ;
+ 20                               129    186.42822339 1                          ;
+ 40                             131.9    95.757450713 1                          ;
+ 50                             116.5    368.66386383 1                          ;
+ 60                                 0               0 1                          ;
+ 601                                0               0 1                          ;
+ 61                                 0    20.371972851 1                          ;
+ 107                               22    509.89610285 1                          ;
+ 157                             13.1    1751.9681915 1                          ;
+
+[RESERVOIRS]
+;ID                                   Head                  Pattern
+ River                            220                            ;
+ Lake                             167                            ;
+
+[TANKS]
+;ID                              Elevation           Init Level            Min Level            Max Level             Diameter           Min Volume Volume Curve         Overflow            
+ 1                              131.9            13.1             0.1            32.1              85               0                                             ;
+ 2                              116.5            23.5             6.5            40.3              50               0                                             ;
+ 3                                129              29               4            35.5             164               0                                             ;
+
+[PIPES]
+;ID                   Node1                Node2                              Length             Diameter            Roughness           Minor Loss               Status
+ 20                   3                    20                                99              99             199               0                 Open   ;
+ 40                   1                    40                                99              99             199               0                 Open   ;
+ 50                   2                    50                                99              99             199               0                 Open   ;
+ 60                   River                60                              1231              24             140               0                 Open   ;
+ 330                  60                   601                                1              30             140               0               Closed   ;
+ 333                  601                  61                                 1              30             140               0                 Open   ;
+ new-pipe-77          157                  20                      1843.6905983    18.707520777             100               0                 Open   ;
+ new-pipe-79          61                   20                      1843.6905983    8.6044872001             100               0                 Open   ;
+ new-pipe-80          61                   157                     1843.6905983    16.158008955             100               0                 Open   ;
+ new-pipe-88          107                  10                      1843.6905983    9.2902457803             100               0                 Open   ;
+ new-pipe-108         40                   50                      1843.6905983    3.3791510989             100               0                 Open   ;
+ new-pipe-112         157                  107                     1843.6905983    11.920456635             100               0                 Open   ;
+ new-pipe-113         157                  10                      1843.6905983    8.0189584956             100               0                 Open   ;
+ new-pipe-115         20                   107                     1843.6905983    4.9258300598             100               0                 Open   ;
+ new-pipe-116         20                   10                      1843.6905983    2.9054851695             100               0                 Open   ;
+ new-pipe-119         61                   107                     1843.6905983    3.6651582021             100               0                 Open   ;
+ new-pipe-120         61                   10                      1843.6905983    1.3897430028             100               0                 Open   ;
+ new-pipe-123         50                   157                     1843.6905983    9.4996109287             100               0                 Open   ;
+ new-pipe-125         157                  40                      1843.6905983    13.914417908             100               0                 Open   ;
+ new-pipe-127         50                   10                      1843.6905983     1.477788113             100               0                 Open   ;
+ new-pipe-128         50                   107                     1843.6905983     2.645520632             100               0                 Open   ;
+ new-pipe-129         50                   20                      1843.6905983    1.2335072858             100               0                 Open   ;
+ new-pipe-130         50                   61                      1843.6905983   0.91597621957             100               0                 Open   ;
+ new-pipe-131         10                   40                      1843.6905983    2.3962407191             100               0                 Open   ;
+ new-pipe-132         107                  40                      1843.6905983    4.0838935843             100               0                 Open   ;
+ new-pipe-133         40                   20                      1843.6905983    1.8008501159             100               0                 Open   ;
+ new-pipe-134         40                   61                      1843.6905983    1.4756261857             100               0                 Open   ;
+
+[PUMPS]
+;ID                   Node1                Node2                Properties          
+ 10                   Lake                 10                   HEAD     1                      ;
+ 335                  60                   61                   HEAD     2                      ;
+
+[VALVES]
+;ID                   Node1                Node2                            Diameter Type              Setting           Minor Loss
+
+[TAGS]
+;type      name       tag       
+
+[DEMANDS]
+;ID        Demand     Pattern   
+
+[STATUS]
+;ID        Setting   
+10         Closed    
+
+[PATTERNS]
+;ID        Multipliers
+
+1 1.340000 1.940000 1.460000 1.440000 0.760000 0.920000
+1 0.850000 1.070000 0.960000 1.100000 1.080000 1.190000
+1 1.160000 1.080000 0.960000 0.830000 0.790000 0.740000
+1 0.640000 0.640000 0.850000 0.960000 1.240000 1.670000
+
+2 0.000000 0.000000 0.000000 0.000000 0.000000 1219.000000
+2 0.000000 0.000000 0.000000 1866.000000 1836.000000 1818.000000
+2 1818.000000 1822.000000 1822.000000 1817.000000 1824.000000 1816.000000
+2 1833.000000 1817.000000 1830.000000 1814.000000 1840.000000 1859.000000
+
+3 620.000000 620.000000 620.000000 620.000000 620.000000 360.000000
+3 360.000000 0.000000 0.000000 0.000000 0.000000 360.000000
+3 360.000000 360.000000 360.000000 360.000000 0.000000 0.000000
+3 0.000000 0.000000 0.000000 0.000000 360.000000 360.000000
+
+4 1637.000000 1706.000000 1719.000000 1719.000000 1791.000000 1819.000000
+4 1777.000000 1842.000000 1815.000000 1825.000000 1856.000000 1801.000000
+4 1819.000000 1733.000000 1664.000000 1620.000000 1613.000000 1620.000000
+4 1616.000000 1647.000000 1627.000000 1627.000000 1671.000000 1668.000000
+
+5 4439.000000 4531.000000 4511.000000 4582.000000 4531.000000 4582.000000
+5 4572.000000 4613.000000 4643.000000 4643.000000 4592.000000 4613.000000
+5 4531.000000 4521.000000 4449.000000 4439.000000 4449.000000 4460.000000
+5 4439.000000 4419.000000 4368.000000 4399.000000 4470.000000 4480.000000
+
+[CURVES]
+;ID         X-Value      Y-Value     
+;PUMP: 1
+ 1              0.000000   104.000000   ;
+ 1           2000.000000    92.000000   ;
+ 1           4000.000000    63.000000   ;
+
+;PUMP: 2
+ 2              0.000000   200.000000   ;
+ 2           8000.000000   138.000000   ;
+ 2          14000.000000    86.000000   ;
+
+
+[CONTROLS]
+Pump 10 Open AT TIME 1
+Pump 10 Closed AT TIME 15
+Pump 10 Open AT TIME 25
+Pump 10 Closed AT TIME 39
+Pump 10 Open AT TIME 49
+Pump 10 Closed AT TIME 63
+Pump 10 Open AT TIME 73
+Pump 10 Closed AT TIME 87
+Pump 10 Open AT TIME 97
+Pump 10 Closed AT TIME 111
+Pump 10 Open AT TIME 121
+Pump 10 Closed AT TIME 135
+Pump 10 Open AT TIME 145
+Pump 10 Closed AT TIME 159
+Pump 335 Open IF Tank 1 below 17.1
+Pump 335 Closed IF Tank 1 above 19.1
+Pipe 330 Closed IF Tank 1 below 17.1
+Pipe 330 Open IF Tank 1 above 19.1
+
+[RULES]
+
+[ENERGY]
+GLOBAL EFFICIENCY      75.0000
+GLOBAL PRICE           0.0000
+DEMAND CHARGE          0.0000
+
+[EMITTERS]
+;ID        Flow coefficient
+
+[QUALITY]
+
+[SOURCES]
+;Node      Type       Quality    Pattern   
+
+[REACTIONS]
+;Type           Pipe/Tank               Coefficient
+
+ ORDER BULK 0
+ ORDER TANK 0
+ ORDER WALL 0
+ GLOBAL BULK 0.0000    
+ GLOBAL WALL 0.0000    
+ LIMITING POTENTIAL 0.0000    
+ ROUGHNESS CORRELATION 0.0000    
+
+[MIXING]
+;Tank ID             Model Fraction
+
+[TIMES]
+DURATION             24:00:00
+HYDRAULIC TIMESTEP   00:15:00
+QUALITY TIMESTEP     00:15:00
+PATTERN TIMESTEP     01:00:00
+PATTERN START        00:00:00
+REPORT TIMESTEP      01:00:00
+REPORT START         00:00:00
+START CLOCKTIME      00:00:00 AM
+RULE TIMESTEP        00:06:00
+STATISTIC            NONE      
+
+[REPORT]
+STATUS     YES
+SUMMARY    NO
+PAGE       0
+
+[OPTIONS]
+UNITS                GPM                 
+HEADLOSS             H-W                 
+SPECIFIC GRAVITY     1
+VISCOSITY            1
+TRIALS               40
+ACCURACY             0.001
+CHECKFREQ            2
+MAXCHECK             10
+UNBALANCED           CONTINUE 10
+PATTERN              1                   
+DEMAND MULTIPLIER    1
+EMITTER EXPONENT     0.5
+QUALITY              Chemical mg/L
+DIFFUSIVITY          1
+TOLERANCE            0.01
+
+[COORDINATES]
+;Node      X-Coord    Y-Coord   
+10                  9.000000000         27.850000000
+20                 29.440000000         26.910000000
+40                 27.020000000          9.810000000
+50                 33.010000000          3.010000000
+60                 23.900000000         29.940000000
+601                23.000000000         29.490000000
+61                 23.710000000         29.030000000
+107                18.450000000         20.460000000
+157                24.850000000         20.160000000
+River              24.150000000         31.060000000
+Lake                8.000000000         27.530000000
+1                  27.460000000          9.840000000
+2                  32.990000000          3.450000000
+3                  29.410000000         27.270000000
+
+[VERTICES]
+;Link      X-Coord    Y-Coord   
+
+[LABELS]
+ 8.000             	29.420            	"LAKE"
+ 25.000            	31.100            	"RIVER"
+
+[BACKDROP]
+DIMENSIONS    6.160    -1.550    46.700    32.610
+UNITS    NONE
+OFFSET    0.00    0.00
+
+[END]

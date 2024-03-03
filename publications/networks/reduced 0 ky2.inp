@@ -1,0 +1,179 @@
+; Filename: networks/ky2.inp
+; WNTR: 0.4.2
+; Created: 2023-05-21 17:30:22
+[TITLE]
+
+[JUNCTIONS]
+;ID                      Elevation       Demand Pattern                 
+ J-1                         488.5406    59.788233279 1                          ;
+ J-127                            501    135.68619562 1                          ;
+ J-136                       473.3589    407.85206922 1                          ;
+ J-27                         510.001    358.70863519 1                          ;
+ J-485                       488.2168     149.7480338 1                          ;
+ O-Pump-1                    479.6692    339.28683289 1                          ;
+ I-Pump-1                    479.6692               0 1                          ;
+
+[RESERVOIRS]
+;ID                                   Head                  Pattern
+ R-1                         476.1995                            ;
+
+[TANKS]
+;ID                              Elevation           Init Level            Min Level            Max Level             Diameter           Min Volume Volume Curve         Overflow            
+ T-1                         486.8347        116.1653        113.1653        143.1653              38               0                                             ;
+ T-2                         500.9832        148.0168        119.0168        149.0168              53               0                                             ;
+ T-3                         490.4828        129.5172        119.5172        159.5172              65               0                                             ;
+
+[PIPES]
+;ID                   Node1                Node2                              Length             Diameter            Roughness           Minor Loss               Status
+ P-1                  J-1                  T-3                          620.809              10             100               0                 Open   ;
+ P-1007               T-1                  J-485                        180.009               8             100               0                 Open   ;
+ P-296                T-2                  J-127                          63.99              10             100               0                 Open   ;
+ P-977                I-Pump-1             R-1                          124.349              10             100               0                 Open   ;
+ new-pipe-1640        O-Pump-1             J-127                   444.39751157    10.525897287             100               0                 Open   ;
+ new-pipe-1695        J-1                  J-27                    444.39751157    4.5557588054             100               0                 Open   ;
+ new-pipe-1747        J-485                J-136                   444.39751157    7.2062116769             100               0                 Open   ;
+ new-pipe-1799        J-127                J-136                   444.39751157      6.14416027             100               0                 Open   ;
+ new-pipe-1800        J-127                J-485                   444.39751157    2.8705286885             100               0                 Open   ;
+ new-pipe-1819        J-127                J-27                    444.39751157     6.994555649             100               0                 Open   ;
+ new-pipe-1820        J-127                J-1                     444.39751157    3.1509990444             100               0                 Open   ;
+ new-pipe-1823        J-27                 O-Pump-1                444.39751157    6.0731360903             100               0                 Open   ;
+ new-pipe-1833        O-Pump-1             J-1                     444.39751157     2.719072034             100               0                 Open   ;
+ new-pipe-1838        J-1                  J-136                   444.39751157    2.7207198557             100               0                 Open   ;
+ new-pipe-1839        J-1                  J-485                   444.39751157   0.78534657992             100               0                 Open   ;
+ new-pipe-1840        J-27                 J-136                   444.39751157    5.1573887177             100               0                 Open   ;
+ new-pipe-1841        J-27                 J-485                   444.39751157     2.666101229             100               0                 Open   ;
+ new-pipe-1842        J-136                O-Pump-1                444.39751157    6.4567879044             100               0                 Open   ;
+ new-pipe-1843        J-485                O-Pump-1                444.39751157    5.4875689794             100               0                 Open   ;
+
+[PUMPS]
+;ID                   Node1                Node2                Properties          
+ ~@Pump-1             I-Pump-1             O-Pump-1             POWER    124.99999999999999     ;
+
+[VALVES]
+;ID                   Node1                Node2                            Diameter Type              Setting           Minor Loss
+
+[TAGS]
+;type      name       tag       
+
+[DEMANDS]
+;ID        Demand     Pattern   
+
+[STATUS]
+;ID        Setting   
+
+[PATTERNS]
+;ID        Multipliers
+
+1 0.330000 0.250000 0.209000 0.209000 0.259000 0.360000
+1 0.529000 0.910000 1.200000 1.299000 1.340000 1.340000
+1 1.320000 1.269000 1.250000 1.250000 1.279000 1.370000
+1 1.519000 1.700000 1.750000 1.669000 0.899000 0.479000
+
+2 1.000000
+
+3 0.165000 0.125000 0.105000 0.105000 0.130000 0.180000
+3 0.265000 0.455000 0.600000 0.650000 0.670000 0.670000
+3 0.660000 0.635000 0.625000 0.625000 0.640000 0.685000
+3 0.760000 0.850000 0.875000 0.835000 0.450000 0.240000
+
+ENRG1 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ENRG1 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ENRG1 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ENRG1 1.000000 1.000000 1.000000 1.000000 1.000000
+
+[CURVES]
+;ID         X-Value      Y-Value     
+
+[CONTROLS]
+Pump ~@Pump-1 Open IF Tank T-2 below 124.01600000000002
+Pump ~@Pump-1 Closed IF Tank T-2 above 146.016
+
+[RULES]
+
+[ENERGY]
+GLOBAL EFFICIENCY      75.0000
+GLOBAL PRICE           0.0000
+DEMAND CHARGE          0.0000
+GLOBAL PATTERN         ENRG1
+
+[EMITTERS]
+;ID        Flow coefficient
+
+[QUALITY]
+
+[SOURCES]
+;Node      Type       Quality    Pattern   
+
+[REACTIONS]
+;Type           Pipe/Tank               Coefficient
+
+ ORDER BULK 1
+ ORDER TANK 1
+ ORDER WALL 1
+ GLOBAL BULK -0.5000   
+ GLOBAL WALL -1.0000   
+ LIMITING POTENTIAL 0.0000    
+ ROUGHNESS CORRELATION 0.0000    
+
+[MIXING]
+;Tank ID             Model Fraction
+
+[TIMES]
+DURATION             24:00:00
+HYDRAULIC TIMESTEP   00:30:00
+QUALITY TIMESTEP     00:05:00
+PATTERN TIMESTEP     01:00:00
+PATTERN START        00:00:00
+REPORT TIMESTEP      00:30:00
+REPORT START         00:00:00
+START CLOCKTIME      00:00:00 AM
+RULE TIMESTEP        00:06:00
+STATISTIC            NONE      
+
+[REPORT]
+STATUS     FULL
+SUMMARY    NO
+PAGE       0
+
+[OPTIONS]
+UNITS                GPM                 
+HEADLOSS             H-W                 
+SPECIFIC GRAVITY     1
+VISCOSITY            1
+TRIALS               40
+ACCURACY             0.001
+CHECKFREQ            2
+MAXCHECK             10
+UNBALANCED           CONTINUE 10
+PATTERN              1                   
+DEMAND MULTIPLIER    1
+EMITTER EXPONENT     0.5
+QUALITY              AGE                 
+DIFFUSIVITY          1
+TOLERANCE            0.01
+
+[COORDINATES]
+;Node      X-Coord    Y-Coord   
+J-1           4071494.750000000    3449266.000000000
+J-127         4073680.250000000    3441640.000000000
+J-136         4077117.990000000    3439924.000000000
+J-27          4070888.250000000    3442837.000000000
+J-485         4075454.750000000    3437442.000000000
+O-Pump-1      4073253.000000000    3441100.000000000
+I-Pump-1      4073253.000000000    3441100.000000000
+R-1           4073135.000000000    3441057.000000000
+T-1           4075634.000000000    3437429.000000000
+T-2           4073744.000000000    3441639.000000000
+T-3           4071752.000000000    3449830.000000000
+
+[VERTICES]
+;Link      X-Coord    Y-Coord   
+
+[LABELS]
+
+[BACKDROP]
+DIMENSIONS    4054301.72    3430693.60    4080356.03    3450150.40
+UNITS    NONE
+OFFSET    0.00    0.00
+
+[END]

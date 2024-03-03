@@ -23,7 +23,7 @@ max_nodal_degree = None
 
 # Call model reduction function
 t1 = time.time()
-wn2 = mg.reduction.reduce_model(inp_file, op_pt, list_of_nodes_to_keep, max_nodal_degree)
+wn2 = mg.reduction.reduce_model(inp_file, op_pt, list_of_nodes_to_keep, max_nodal_degree, save_filename='networks/new inpfile')
 t2 = time.time()
 
 # Display reduction time
