@@ -49,7 +49,10 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
             #update demand
             junc_dict[nb_node]['Demand'] = junc_dict[nb_node]['Demand'] + junc_dict[removal_node]['Demand']
             wn.get_node(nb_node).demand_timeseries_list[0].base_value = wn.get_node(nb_node).demand_timeseries_list[0].base_value + wn.get_node(removal_node).demand_timeseries_list[0].base_value
-            
+            if wn.get_node(nb_node).demand_timeseries_list[0].pattern_name == '':
+                            if wn.get_node(removal_node).demand_timeseries_list[0].pattern_name != '':
+                                wn.get_node(nb_node).demand_timeseries_list[0]._pattern = wn.get_pattern(wn.get_node(removal_node).demand_timeseries_list[0].pattern_name)
+
             #delete link and node and update dictionaries
             wn.remove_link(nb_link)
             wn.remove_node(removal_node)
@@ -83,7 +86,10 @@ def mod_reduction(wn, new_link_list, junc_dict, pipe_dict, unremovable_nodes, re
                         #update demand
                         junc_dict[node_x]['Demand'] = junc_dict[node_x]['Demand'] + abs(pipe_dict[link_x]['Linear g']*junc_dict[removal_node]['Demand']/junc_dict[removal_node]['Diagonal g'])
                         wn.get_node(node_x).demand_timeseries_list[0].base_value = wn.get_node(node_x).demand_timeseries_list[0].base_value + abs(pipe_dict[link_x]['Linear g']*wn.get_node(removal_node).demand_timeseries_list[0].base_value/junc_dict[removal_node]['Diagonal g'])
- 
+                        if wn.get_node(node_x).demand_timeseries_list[0].pattern_name == '':
+                            if wn.get_node(removal_node).demand_timeseries_list[0].pattern_name != '':
+                                wn.get_node(node_x).demand_timeseries_list[0]._pattern = wn.get_pattern(wn.get_node(removal_node).demand_timeseries_list[0].pattern_name)
+
                         #update diagonal g
                         junc_dict[node_x]['Diagonal g'] = junc_dict[node_x]['Diagonal g'] - abs((pipe_dict[link_x]['Linear g']**2)/junc_dict[removal_node]['Diagonal g'])
                         
