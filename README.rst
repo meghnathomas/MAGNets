@@ -20,14 +20,14 @@ MAGNets (Model AGgregation and reduction of water distribution Networks) is a Py
 .. _`Ulanicki et al (1996)`: https://www.researchgate.net/profile/Fernando-Martinez-Alzamora/publication/273796660_Simplification_of_Water_Distribution_Network_Models/links/550dca050cf2128741674d57/Simplification-of-Water-Distribution-Network-Models.pdf
 
 Requirements
---------
+------------
 
 MAGNets has been tested on Python version **3.6**, **3.7**, and **3.8**. A list of its dependencies can be found `here`_.
 
 .. _`here`: https://github.com/meghnathomas/MAGNets/blob/master/requirements.txt
 
 Installation: Stable release
---------
+----------------------------
 
 Python distributions, such as Anaconda, are recommended to manage the Python environment as they already contain (or easily support the installation of) many Python packages (such as SciPy and NumPy) that are used in the MAGNets package. Instructions to download and install the Anaconda distribution can be found `at this link`_, and Anaconda for specific versions of Python can be found in the `Anaconda distribution archive`_. This `blog post`_ demonstrates how to easily change the Anaconda Python version to a version compatible with MAGNets using the command prompt.
 
@@ -51,7 +51,7 @@ If you don’t have pip installed, this `Python installation guide`_ can guide y
 
 
 Installation: From sources
---------
+--------------------------
 
 The sources for MAGNets can be downloaded from the Github repo.
 
@@ -75,7 +75,7 @@ Once you have a copy of the source, you can install it with:
     
 
 Getting Started
---------
+---------------
 
 Use this `jupyter notebook`_ to run some useful examples of MAGNets. Additional example codes and 12 test networks can be found in the `examples`_ and `publications`_ folders.
 
