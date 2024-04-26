@@ -2,7 +2,7 @@
 
 __author__ = """Meghna Sarah Thomas"""
 __email__ = 'meghnathomas@utexas.edu'
-__version__ = '0.1.9'
+__version__ = '0.1.10'
 
 
 from magnets import utils
